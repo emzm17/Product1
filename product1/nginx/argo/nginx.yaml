@@ -7,12 +7,18 @@ spec:
   project: default
 
   source:
-     repoURL: https://charts.bitnami.com/bitnami
-     chart: nginx
-     targetRevision: 25.0.20
-     path: product1/nginx/manifest-nginx
-     helm:
-      releaseName: nginx-app1
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: nginx
+      targetRevision: 25.0.20
+      path: product1/nginx/manifest-nginx
+      helm:
+        releaseName: nginx-app1
+        valueFiles:
+          - $values/product1/nginx/manifest-nginx/values.yaml
+
+    - repoURL: https://github.com/emzm17/Product1
+      targetRevision: main
+      ref: values
 
   destination:
     server: https://kubernetes.default.svc
