@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/emzm17/Product1
     targetRevision: main
-    path: product1/product1-fe-config/manifests-be
+    path: product1/product1-fe-config/manifests-fe
 
 
   destination:
