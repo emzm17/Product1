@@ -15,6 +15,10 @@ spec:
       targetRevision: main
       path: product1/product1-fe-config/argo
 
+    - repoURL: https://github.com/emzm17/Product1
+      targetRevision: main
+      path: product1/nginx/argo
+
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

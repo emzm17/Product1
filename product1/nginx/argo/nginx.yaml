@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: product-nginx
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: nginx
+      targetRevision: 25.0.20
+      path: product1/nginx/manifest-nginx
+      helm:
+        releaseName: nginx-app1
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: product1-ns
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
+
+      
