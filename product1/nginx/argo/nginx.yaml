@@ -14,7 +14,7 @@ spec:
       helm:
         releaseName: nginx-app1
         valueFiles:
-          - $values/product1/nginx/manifest-nginx/values.yaml
+          - $values/product1/nginx/manifest-nginx/nginx-values.yaml
 
     - repoURL: https://github.com/emzm17/Product1
       targetRevision: main
